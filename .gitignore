@@ -1,0 +1,114 @@
+#Builds
+./build/*
+./content/assets/img/*
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Cython build artifacts
+*.c
+*.cpp
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.pipenv/
+pip-wheel-metadata/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# pytest
+.cache/
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# coverage
+.coverage
+coverage.xml
+htmlcov/
+
+# Pylint
+.pylint.d/
+
+# pytype
+.pytype/
+
+# Pyre
+.pyre/
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Spyder
+.spyderproject
+.spyproject
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Unix
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# dotenv
+.env
+.env.*
+
+# SQLite database files
+*.sqlite3
+
+# Local test files
+tests/__pycache__/
+tests/tmp/
+
+# Optional: ignore specific data, models, or output folders
+data/
+output/
+models/
+logs/
+
+# Optional: ignore wheel files
+*.whl
