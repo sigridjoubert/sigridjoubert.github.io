@@ -22,11 +22,8 @@ from .img import convert_and_resize_to_webp
 LOGGER = get_logger()
 
 def handle_remove_readonly(func, path, exc_info):
-    try:
-        os.chmod(path, stat.S_IWRITE)
-        func(path)
-    except:
-        pass
+    os.chmod(path, stat.S_IWRITE)
+    func(path)
 
 class Builder:
 
@@ -88,7 +85,8 @@ class Builder:
 
     def build_site(self):
         try:
-            shutil.rmtree(BUILD_DIR, ignore_errors=False, onerror=handle_remove_readonly)
+            if BUILD_DIR.exists():
+                shutil.rmtree(BUILD_DIR, ignore_errors=False, onexc=handle_remove_readonly)
             BUILD_DIR.mkdir(parents=True, exist_ok=True)
             self.get_content()
             self.site.build_from_dict(self.content)
