@@ -1,4 +1,4 @@
-from PIL import Image
+from PIL import Image, ImageOps
 from pathlib import Path
 
 from .logger import get_logger
@@ -17,6 +17,7 @@ def convert_and_resize_to_webp(path: Path, max_size=1920, quality=80):
 
     try:
         with Image.open(path) as img:
+            img = ImageOps.exif_transpose(img)  # <-- correct orientation
             img = img.convert("RGBA")  # Preserve alpha if present
 
             # Replace transparent pixels with white

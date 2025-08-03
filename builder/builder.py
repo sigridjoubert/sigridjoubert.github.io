@@ -1,4 +1,6 @@
 import shutil
+import os
+import stat
 
 from .page import Page
 from .site import Site
@@ -19,6 +21,9 @@ from .img import convert_and_resize_to_webp
 
 LOGGER = get_logger()
 
+def handle_remove_readonly(func, path, exc_info):
+    os.chmod(path, stat.S_IWRITE)
+    func(path)
 
 class Builder:
 
@@ -54,10 +59,11 @@ class Builder:
                         self.content[dirname][page.title] = page
 
     def move_js_content(self):
+        return
         try:
             shutil.copytree(JS_DIR, BUILD_DIR / "js")
-        except FileNotFoundError as e:
-            LOGGER.error(f"Javascript folder {JS_DIR} empty or missing.")
+        except FileNotFoundError | FileExistsError as e:
+            LOGGER.error(f"Javascript folder {JS_DIR} empty, missing, or present when it shouldn't.")
 
     def write_stylesheet(self):
         # self.stylesheet.write(BUILD_DIR / "style.css")
@@ -79,7 +85,7 @@ class Builder:
 
     def build_site(self):
         try:
-            shutil.rmtree(BUILD_DIR, ignore_errors=True)
+            shutil.rmtree(BUILD_DIR, ignore_errors=False, onerror=handle_remove_readonly)
             BUILD_DIR.mkdir(parents=True, exist_ok=True)
             self.get_content()
             self.site.build_from_dict(self.content)

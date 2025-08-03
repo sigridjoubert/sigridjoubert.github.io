@@ -1,8 +1,7 @@
 # The Seventh Seal
 
-Inspired by Ingmar Bergman’s _The Seventh Seal_, this performance centers on a handmade prie-dieu, built from salvaged wood, nails, and beeswax composite. For an hour, the participant (Sigrid Joubert) kneels beneath the sun’s weight, while the other participant (Thomas Peschlow), under the guise of Death, observes from upon a shaded hill.
 
-The body impresses upon the wax a seal of presence. The piece gestures toward our restless need to negotiate with the unknown. There is no answer—only the certainty of an ending.
+By Thomas Peschlow, Sigrid Joubert
 
 
 [Watch the video](https://youtu.be/KPaO4xBU-iM)
