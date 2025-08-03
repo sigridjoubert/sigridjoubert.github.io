@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <head>
+   <meta charset="utf-8"/>
+   <meta content="width=device-width, initial-scale=1" name="viewport"/>
+   <title>
+    Sigrid Joubert
+   </title>
+   <link href="/style.css" rel="stylesheet"/>
+   <link href="icon.ico" rel="icon" type="image/x-icon"/>
+  </head>
+ </head>
+ <body>
+  <div class="menu">
+   <nav class="menu">
+    <a class="menutitle" href="/index.html">
+     Sigrid Joubert
+    </a>
+    <a class="menuelement" href="/contact.html">
+     Contact
+    </a>
+    <div class="menucategory">
+     <input hidden="True" id="menu_toggle_architecture" type="checkbox"/>
+     <label class="menuelement" for="menu_toggle_architecture">
+      Architecture
+     </label>
+     <div class="menusubcontainer">
+      <a class="menusubelement" href="/Architecture/bain_turcot.html">
+       Bain Turcot
+      </a>
+      <a class="menusubelement" href="/Architecture/ruin,_reversed.html">
+       Ruin, Reversed
+      </a>
+      <a class="menusubelement" href="/Architecture/beeswax_monolith.html">
+       Beeswax Monolith
+      </a>
+     </div>
+    </div>
+    <div class="menucategory">
+     <input hidden="True" id="menu_toggle_art" type="checkbox"/>
+     <label class="menuelement" for="menu_toggle_art">
+      Art
+     </label>
+     <div class="menusubcontainer">
+      <a class="menusubelement" href="/Art/nebulae.html">
+       Nebulae
+      </a>
+      <a class="menusubelement" href="/Art/micro_pen_series.html">
+       Micro Pen Series
+      </a>
+      <a class="menusubelement" href="/Art/leather_studies.html">
+       Leather Studies
+      </a>
+      <a class="menusubelement" href="/Art/monolith.html">
+       Monolith
+      </a>
+      <a class="menusubelement" href="/Art/the_seventh_seal.html">
+       The Seventh Seal
+      </a>
+      <a class="menusubelement" href="/Art/the_history_men.html">
+       The History Men
+      </a>
+     </div>
+    </div>
+   </nav>
+  </div>
+  <div class="content">
+   <img alt="Slideshow" id="slideshow" src="/assets/img/.webp"/>
+   <script>
+    const images = [
+    '/assets/img/MAIN_circle.webp',
+    '/assets/img/MAIN_historyMan.webp',
+    '/assets/img/MAIN_leather.webp',
+    '/assets/img/MAIN_beeswax.webp'
+];
+
+let index = 0;
+const imgElement = document.getElementById('slideshow');
+
+function showNextImage() {
+    imgElement.src = images[index];
+    index = (index + 1) % images.length;
+}
+
+showNextImage(); // Show the first image immediately
+setInterval(showNextImage, 2000); // Change every 2 seconds
+   </script>
+  </div>
+  <div class="footer">
+  </div>
+ </body>
+</html>

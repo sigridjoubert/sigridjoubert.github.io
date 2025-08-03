@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;700&display=swap');
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/assets/fonts/HelveticaNeueThin.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ms Yi Baiti';
+  src: url('/assets/fonts/Microsoft Yi Baiti Regular.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* .ibm-plex-mono-light {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 300;
+  font-style: normal;
+} */
+
+
+*{
+  background: transparent;
+  color: #333;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: normal;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+p {
+  font-size: 0.9rem;
+}
+
+h1 {
+  font-family: 'Helvetica', sans-serif;
+}
+
+img{
+  padding-top: 2rem;
+  max-height: 90vh;
+  max-width: 100%;
+}
+
+iframe {
+  padding-top: 2rem;
+  max-height: 90vh;
+  max-width: 100%;
+  min-height: 50vh;
+  width: 100%;
+}
+
+.menu {
+  padding: 1rem;
+  flex-shrink: 0;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 2rem;
+  max-width: 1080px; /* Increased from 800px */
+  margin: 0 auto;
+}
+
+.footer {
+  /* background: #eee; */
+  padding: 1rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    flex-direction: row;
+  }
+
+  .menu {
+    height: 100vh;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .content {
+    margin-left: 200px;
+  }
+}
+
+.menutitle {
+  display: block;
+  padding: 0.5rem;
+  padding-top: 1.5rem;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: 'Helvetica', sans-serif;
+}
+
+.menuelement {
+  display: block;
+  padding: 0.5rem;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.9rem;
+}
+
+/* .menuelement:hover {
+} */
+
+.menusubcontainer {
+  display: none;
+  padding-left: 1rem;
+}
+
+input[type="checkbox"]:checked + label + .menusubcontainer {
+  display: block;
+}
+
+.menusubelement {
+  display: block;
+  padding: 0.5rem;
+  text-decoration: none;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.9rem;
+}
+
+/* .menusubelement:hover {
+} */
