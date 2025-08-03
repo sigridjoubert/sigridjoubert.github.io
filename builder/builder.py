@@ -73,6 +73,10 @@ class Builder:
     def move_assets(self):
         shutil.copytree(ASSETS_DIR, BUILD_DIR / "assets")
 
+    def create_cname(self):
+	with open(BUILD_DIR/"CNAME", "w") as f:
+	    f.write("www.sigridjoubert.ca")
+
     def build_site(self):
         try:
             shutil.rmtree(BUILD_DIR, ignore_errors=True)
@@ -88,5 +92,6 @@ class Builder:
             self.move_assets()
             self.site.write_content()
             self.write_stylesheet()
+	    self.create_cname()
         except Exception as e:
             raise (e)
