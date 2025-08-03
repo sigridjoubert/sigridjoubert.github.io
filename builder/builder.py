@@ -22,8 +22,11 @@ from .img import convert_and_resize_to_webp
 LOGGER = get_logger()
 
 def handle_remove_readonly(func, path, exc_info):
-    os.chmod(path, stat.S_IWRITE)
-    func(path)
+    try:
+        os.chmod(path, stat.S_IWRITE)
+        func(path)
+    except:
+        pass
 
 class Builder:
 
