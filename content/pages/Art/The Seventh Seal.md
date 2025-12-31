@@ -2,7 +2,7 @@
 
 Made in collaboration with Thomas Peschlow.
 
-[Watch the video](https://youtube.com/shorts/5sP6IoMHJP4)
+[Watch the video](https://youtu.be/KPaO4xBU-iM)
 
 ![still1](still1.jpg)
 
